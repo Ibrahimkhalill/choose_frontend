@@ -12,6 +12,7 @@ import { FaViber, FaInstagram, FaQrcode } from "react-icons/fa";
 import Footer from "../../components/footer/Footer";
 
 import Navbar from "../../components/navbar/Navbar";
+import { Link } from "react-router-dom";
 
 export default function ChoosLanding() {
   return (
@@ -254,9 +255,11 @@ export default function ChoosLanding() {
                 </p>
 
                 {/* Button */}
-                <button className="bg-[#89540E] text-white text-sm sm:text-base px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-[#6B3D01] cursor-pointer transition">
+                <Link
+                  to={"/signin"}
+                  className="bg-[#89540E] text-white text-sm sm:text-base px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-[#6B3D01] cursor-pointer transition">
                   Get Started Today
-                </button>
+                </Link>
               </div>
 
               {/* Right - Features List */}
