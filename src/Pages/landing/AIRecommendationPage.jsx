@@ -176,7 +176,8 @@ const AIRecommendationPage = () => {
                 </div>
 
                 {/* Restaurant Cards Grid */}
-                <div className={`grid grid-cols-1 sm:grid-cols-4 md:gap-6`}>
+                <div
+                  className={`grid grid-cols-1 sm:grid-cols-4 gap-4 md:gap-6`}>
                   {category.restaurants.map((restaurant) => (
                     <RestaurantCard
                       key={`${category.id}-${restaurant.id}`}
