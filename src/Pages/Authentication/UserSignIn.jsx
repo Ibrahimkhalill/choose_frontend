@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo/logo.svg";
 // import apiClient from "../../lib/api-client";
 // import { setAuthTokens } from "../../lib/cookie-utils";
 import toast from "react-hot-toast";
 import background from "../../assets/images/background.png";
 
-const SignIn = () => {
+const UserSignIn = () => {
   const {
     register,
     handleSubmit,
@@ -40,10 +40,8 @@ const SignIn = () => {
       localStorage.setItem("userEmail", data.email);
       toast.success("Login successful!");
 
-      if (data.role === "admin") {
-        navigate("/admin/dashboard");
-      } else {
-        navigate("/restaurant/dashboard");
+      if (data.role === "user") {
+        navigate("/");
       }
     } catch (error) {
       console.error("Login Error:", error.response?.data || error.message);
@@ -66,7 +64,7 @@ const SignIn = () => {
           <div className="flex flex-col items-start">
             <img src={logo} alt="Logo" className="w-24 sm:w-28 lg:w-36 mb-5" />
             <h2 className="text-lg font-semibold mb-6 text-[#414141]">
-              Sign in to manage your website
+              Sign in to get restaurant suggestions
             </h2>
           </div>
 
@@ -82,7 +80,7 @@ const SignIn = () => {
                 </option>
                 <option value="admin">Admin</option>
                 <option value="restaurant">Restaurant</option>
-                <option value="User">User</option>
+                <option value="user">User</option>
               </select>
               {errors.role && (
                 <p className="text-red-600 text-xs sm:text-sm mt-1">
@@ -158,10 +156,16 @@ const SignIn = () => {
               {isLoading ? "Signing In..." : "Sign In"}
             </button>
           </form>
+          <div className=" flex  items-center justify-center gap-2 mt-5">
+            <p>Dont have an account?</p>
+            <Link to={"/signup"} className="text-[#89540E]">
+              Create an account
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default UserSignIn;

@@ -12,7 +12,7 @@ import { FaViber, FaInstagram, FaQrcode } from "react-icons/fa";
 import Footer from "../../components/footer/Footer";
 
 import Navbar from "../../components/navbar/Navbar";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 
 export default function ChoosLanding() {
   return (
@@ -20,7 +20,7 @@ export default function ChoosLanding() {
       <div className="w-full min-h-screen">
         {/* Hero Section */}
         <section
-          className="w-full bg-[#FDFBF2] bg-cover bg-center bg-no-repeat  py-8 md:py-0"
+          className="w-full bg-[#FDFBF2] bg-cover bg-center bg-no-repeat   md:py-0"
           style={{ backgroundImage: `url(${background})` }}>
           <Navbar />
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -53,15 +53,11 @@ export default function ChoosLanding() {
 
                 {/* Social Icons */}
                 <div className="flex gap-3 md:gap-4">
-                  <button className="w-10 h-10 sm:w-12 sm:h-12 bg-[#89540E] text-white rounded-lg flex items-center justify-center hover:bg-[#6B3D01] cursor-pointer transition">
-                    <RiMessengerLine size={24} className="sm:w-7 sm:h-7" />
-                  </button>
-                  <button className="w-10 h-10 sm:w-12 sm:h-12 bg-[#89540E] text-white rounded-lg flex items-center justify-center hover:bg-[#6B3D01] cursor-pointer transition">
-                    <FaInstagram size={24} className="sm:w-7 sm:h-7" />
-                  </button>
-                  <button className="w-10 h-10 sm:w-12 sm:h-12 bg-[#89540E] text-white rounded-lg flex items-center justify-center hover:bg-[#6B3D01] cursor-pointer transition">
-                    <FaViber size={24} className="sm:w-7 sm:h-7" />
-                  </button>
+                  <Link
+                    to={"/chat"}
+                    className="px-4 py-2  bg-[#89540E] text-white rounded-lg flex items-center justify-center hover:bg-[#6B3D01] cursor-pointer transition">
+                    Get Started
+                  </Link>
                 </div>
               </div>
 

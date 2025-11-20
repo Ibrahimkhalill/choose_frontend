@@ -138,11 +138,11 @@ const AIRecommendationPage = () => {
 
   return (
     <>
-      <section className="w-full bg-[#FDFBF2] py-8 md:py-0">
+      <section
+        className="w-full bg-[#FDFBF2] py-8 md:py-0 bg-cover bg-no-repeat"
+        style={{ backgroundImage: `url(${background})` }}>
         <Navbar />
-        <div
-          className=" px-4 sm:px-6 lg:px-8 py-4 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${background})` }}>
+        <div className=" px-4 sm:px-6 lg:px-8 py-4 ">
           <div className="w-full pt-10 max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-8">

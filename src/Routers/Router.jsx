@@ -20,7 +20,12 @@ import MenuManagement from "../Pages/restaurant/menu/MenuManagement";
 import BillDataManagementPage from "../Pages/restaurant/bill/BillDataMangement";
 import RestaurantAnalytics from "../Pages/restaurant/analysis/RestaurantAnalytics";
 import ResSettingsPage from "../Pages/restaurant/settings/ResSettingsPage";
-import AIRecommendationPage from "../Pages/landing/AIRecommendationPage";
+
+import ChatInterface from "../Pages/user/Chat";
+import UserProfile from "../Pages/user/UserProfile";
+import AIRecommendationPage from "../Pages/user/AIRecommendationPage";
+import Signup from "../Pages/Authentication/Signup";
+import UserSignIn from "../Pages/Authentication/UserSignIn";
 
 const router = createBrowserRouter([
   // =====================================
@@ -60,7 +65,11 @@ const router = createBrowserRouter([
     element: <PublicRoute />,
     children: [
       { path: "/signin", element: <SignIn /> },
+      { path: "/user-signin", element: <UserSignIn /> },
+      { path: "/signup", element: <Signup /> },
       { path: "/", element: <Landingpage /> },
+      { path: "/chat", element: <ChatInterface /> },
+      { path: "/user-profile", element: <UserProfile /> },
       { path: "/ai-recommendations", element: <AIRecommendationPage /> },
       { path: "/otp", element: <OtpVerification /> },
       { path: "/forgot_password", element: <ForgetPassword /> },
